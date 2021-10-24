@@ -11,7 +11,9 @@
 
 name: OpenWrt-E8820S 闭源超精简固件5.10
 
-on: 
+on:
+  repository_dispatch:
+  workflow_dispatch:
   release:
     types: [published]
 
