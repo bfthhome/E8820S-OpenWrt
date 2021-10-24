@@ -10,19 +10,19 @@
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
 # 修改openwrt登陆地址,把下面的192.168.123.1修改成你想要的就可以了
-sed -i 's/192.168.1.1/192.168.123.1/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generate
 
 # 修改主机名字，把E8820S修改你喜欢的就行（不能纯数字或者使用中文）
 sed -i 's/OpenWrt/E8820S/g' package/base-files/files/bin/config_generate
 
 # 修改开源驱动wifi名称
-sed -i 's/OpenWrt/ZTE-E8820S-$/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+sed -i 's/OpenWrt/E8820S-WiFi-$/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 
 # 修改闭源驱动2G wifi名称
-sed -i 's/OpenWrt_2G/ZTE-E8820S/g' package/lean/mt/drivers/mt_wifi/files/mt7603.dat
+sed -i 's/OpenWrt_2G/E8820S-WiFi/g' package/lean/mt/drivers/mt_wifi/files/mt7603.dat
 
 # 修改闭源驱动5G wifi名称
-sed -i 's/OpenWrt_5G/ZTE-E8820S-5G/g' package/lean/mt/drivers/mt_wifi/files/mt7612.dat
+sed -i 's/OpenWrt_5G/E8820S-WiFi/g' package/lean/mt/drivers/mt_wifi/files/mt7612.dat
 
 # 修改内核版本为5.10
 sed -i 's/5.4/5.10/g' target/linux/ramips/Makefile
